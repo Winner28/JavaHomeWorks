@@ -22,7 +22,7 @@ public class Task2 {
 
     public void solve() {
         for (double i = a; i<b; i+=h) {
-            System.out.println("Index: " + i + " Value: " + Math.tan(2*i));
+            System.out.println("Index: " + i + " Value: " + Math.tan(2*i)-3 ));
         }
     }
 }
