@@ -2,6 +2,7 @@ import Task6.Notepad;
 import TasksFrom2To5.Task1;
 import TasksFrom2To5.Task2;
 import TasksFrom2To5.Task3;
+import TasksFrom2To5.Task4;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -33,6 +34,10 @@ public class Main {
             System.out.println("eq");
         }
 
+
+        Task4 task4 = new Task4(new double[]{1,2,3,4,5,6});
+        double d = task4.solve();
+        System.out.println(d);
 
 
     }
