@@ -23,9 +23,15 @@ public class Main {
         Notepad notepad = new Notepad(5);
 
         for (int i =0; i<5; i++) notepad.addNote("asd");
-        notepad.showAllNotes();
-        notepad.dellNote("asd");
-        notepad.showAllNotes();
+
+
+        Notepad n2 = new Notepad(5);
+
+        for (int i =0; i<5; i++) n2.addNote("asd");
+
+        if (n2.equals(notepad)) {
+            System.out.println("eq");
+        }
 
 
 

@@ -30,7 +30,7 @@ public class Notepad implements NotepadOperations {
 
 
     /**
-     * Блокнот и записями фиксированного размера
+     * Максимум записей в нашем блокноте
      */
 
     private String[] notes;
@@ -42,6 +42,7 @@ public class Notepad implements NotepadOperations {
      */
 
     public Notepad(int size) {
+
         this.size = size;
         notes = new String[size];
     }
@@ -55,6 +56,7 @@ public class Notepad implements NotepadOperations {
 
     @Override
     public void addNote(String message) {
+
         if (cur >= size) {
             System.out.println("Sorry, no more space :(");
         } else {
@@ -71,6 +73,7 @@ public class Notepad implements NotepadOperations {
 
     @Override
     public void dellNote(String message) {
+
         List<String> list = new ArrayList<>(Arrays.asList(notes));
         if (!list.contains(message)) {
             System.out.println("Sorry, we dont have it!");
@@ -90,6 +93,7 @@ public class Notepad implements NotepadOperations {
 
     @Override
     public void editNote(String edmessage, String NewMessage) {
+
         for (int i =0; i<cur; i++) {
             if (notes[i].equals(edmessage)) {
                 notes[i] = NewMessage;
@@ -107,6 +111,7 @@ public class Notepad implements NotepadOperations {
 
     @Override
     public void showAllNotes() {
+
         System.out.println("All notes: ");
         for (String note : notes) {
             if (note == null) {
@@ -114,5 +119,21 @@ public class Notepad implements NotepadOperations {
             }
             System.out.println(note);
         }
+    }
+
+
+    @Override
+    public boolean equals(Object object) {
+
+        if (this == object) return true;
+        if (object == null || this.getClass() != object.getClass()) return false;
+
+        Notepad notepad = (Notepad) object;
+        if (notepad.notes.length != this.notes.length) return false;
+        for (int i = 0; i<notepad.notes.length; i++) {
+            if (notepad.notes[i] != this.notes[i]) return false;
+        }
+        
+        return true;
     }
 }
