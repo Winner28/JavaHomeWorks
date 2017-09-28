@@ -9,20 +9,25 @@ import java.lang.Math;
  */
 
 public class Task2 {
+
     private double a;
     private double b;
     private double h;
 
 
     public Task2(double a, double b, double h) {
+
         this.a = a;
         this.b = b;
         this.h = h;
+
     }
 
     public void solve() {
+
         for (double i = a; i<b; i+=h) {
-            System.out.println("Index: " + i + " Value: " + (Math.tan(2*i)-3));
+            System.out.printf("Index: %f Value: %f\n", i, (Math.tan(2*i)-3));
         }
+
     }
 }
