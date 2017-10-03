@@ -1,4 +1,4 @@
-package Task6;
+package Module_One.Task6;
 
 import java.util.ArrayList;
 import java.util.Arrays;

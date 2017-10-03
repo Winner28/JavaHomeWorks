@@ -1,4 +1,4 @@
-package TasksFrom2To5;
+package Module_One.TasksFrom2To5;
 
 public class Task3 {
 
