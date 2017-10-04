@@ -1,4 +1,4 @@
-package Module_One.Task6;
+package Module_One.Task_Six;
 
 public interface NotepadOperations {
     public void addNote(String message);

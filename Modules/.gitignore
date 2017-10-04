@@ -1,2 +1,7 @@
-out/production/
+out/
 .idea/
+
+/Modules.iml
+/Study.iml
+
+/target

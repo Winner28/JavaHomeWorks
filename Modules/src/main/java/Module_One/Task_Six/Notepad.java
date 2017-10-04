@@ -1,4 +1,4 @@
-package Module_One.Task6;
+package Module_One.Task_Six;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,6 @@ import java.util.List;
 /**
  * Разработать классы Запись в блокноте и Блокнот (записи блокнота хранятся в массиве).
  * Реализовать методы: Добавить запись, Удалить запись, Редактировать запись, Посмотреть все записи
- * Мне показался удобнее вариант с реализацией интерфейса Операции_Блокнота, нежели создание нового класса
  */
 
 
@@ -54,7 +53,7 @@ public class Notepad implements NotepadOperations {
      * @param message Новая запись
      */
 
-    @Override
+
     public void addNote(String message) {
 
         if (cur >= size) {
@@ -71,10 +70,10 @@ public class Notepad implements NotepadOperations {
      * @param message Запись которую необходимо удалить
      */
 
-    @Override
+
     public void dellNote(String message) {
 
-        List<String> list = new ArrayList<>(Arrays.asList(notes));
+        List<String> list = new ArrayList<String>(Arrays.asList(notes));
         if (!list.contains(message)) {
             System.out.println("Sorry, we dont have it!");
         } else {
@@ -91,7 +90,7 @@ public class Notepad implements NotepadOperations {
      * @param NewMessage Новая запись
      */
 
-    @Override
+
     public void editNote(String edmessage, String NewMessage) {
 
         for (int i =0; i<cur; i++) {
@@ -109,7 +108,7 @@ public class Notepad implements NotepadOperations {
      *
      */
 
-    @Override
+
     public void showAllNotes() {
 
         System.out.println("All notes: ");
