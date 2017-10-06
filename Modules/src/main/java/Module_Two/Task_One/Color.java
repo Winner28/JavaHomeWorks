@@ -4,7 +4,12 @@ public enum Color {
     DARK,
     RED,
     BLUE,
-    YELLOW
+    YELLOW;
+
+    @Override
+    public String toString() {
+        return " Color is :" + name();
+    }
 
 
 }
