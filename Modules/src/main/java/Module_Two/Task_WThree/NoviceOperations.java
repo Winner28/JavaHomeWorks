@@ -1,4 +1,4 @@
-package Module_Two.Task_ZThree;
+package Module_Two.Task_WThree;
 
 import Module_Two.Task_One.Color;
 

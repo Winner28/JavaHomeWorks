@@ -1,13 +1,6 @@
-import Module_One.TasksFrom_One_To_Five.Task1;
-import Module_One.TasksFrom_One_To_Five.Task2;
 import Module_Two.Task_One.Color;
-import Module_Two.Task_One.Pen;
 import Module_Two.Task_Two.Stationery;
-import Module_Two.Task_Two.Stuff_List.OtherStuff;
-import Module_Two.Task_Two.Stuff_List.Stuff;
-import Module_Two.Task_ZThree.NoviceRecr;
-
-import java.util.Collections;
+import Module_Two.Task_WThree.NoviceRecr;
 
 public class Main {
 
