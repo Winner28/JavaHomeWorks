@@ -1,6 +1,8 @@
 import Module_Two.Task_One.Color;
 import Module_Two.Task_Two.Stationery;
 import Module_Two.Task_WThree.NoviceRecr;
+import Module_Two.Task_WWFive.Discipline;
+import Module_Two.Task_WWFive.University;
 
 public class Main {
 
@@ -26,6 +28,11 @@ public class Main {
         noviceRecr.needPen(Color.DARK);
 
         noviceRecr.getAllStuff();
+
+
+        University university = new University().setUniversityName("LETI");
+
+
 
 
 

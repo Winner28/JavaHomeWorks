@@ -36,6 +36,12 @@ public class Student {
 
 
     @Override
+    public String toString() {
+        return "Name: " + first + " \nLast name: " + last + "\nAge: " + age;
+    }
+
+
+    @Override
     public boolean equals(Object o) {
 
         if (this == o)
@@ -45,6 +51,7 @@ public class Student {
             return false;
 
         Student student = (Student)o;
+
 
         return this.first.equals(student.first) && this.last.equals(student.last) && this.age == student.age;
 

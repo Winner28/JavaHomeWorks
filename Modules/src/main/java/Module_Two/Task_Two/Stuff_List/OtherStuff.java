@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 
 @SuppressWarnings({"unchecked"})
-public class OtherStuff <T extends Stuff> {
+public class OtherStuff <T> {
 
     private T[] otherStuffs;
 

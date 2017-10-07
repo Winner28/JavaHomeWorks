@@ -174,4 +174,29 @@ public class Stationery implements StationeryOperations {
         throw new RuntimeException(message);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+
+        Stationery stationery = (Stationery)o;
+
+        if (this.pens.length == stationery.pens.length &&
+                this.notebooks.length == stationery.notebooks.length &&
+                this.otherStuff.getSize() == stationery.otherStuff.getSize()) {
+
+
+            /**
+             * TODO: CREATE EQUALS
+             */
+        }
+
+        return false;
+    }
+
 }

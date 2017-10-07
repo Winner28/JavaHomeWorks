@@ -6,6 +6,7 @@ public class SGroup {
     private Discipline discipline;
 
     public SGroup(Discipline discipline) {
+        this.discipline = discipline;
         studentList = new MyList<>();
     }
 
@@ -21,22 +22,30 @@ public class SGroup {
         System.out.println("-------------------");
         for (int i = 0; i < studentList.getSize(); i++) {
             System.out.println(studentList.get(i));
+            System.out.println();
+            System.out.println("***");
        }
     }
 
-    public void isStudentInGroups(String first, String last) {
+    public void isStudentInGroups(String first, String last, int age) {
         for (int i = 0; i < studentList.getSize(); i++) {
-            if (studentList.get(i).equals(new Student().setFirst(first).setLast(last))) {
+            if (studentList.get(i).equals(new Student().setFirst(first).setLast(last).setAge(age))) {
                 System.out.println("STUDENT IN GROUP: " + discipline);
                 return;
             }
         }
-        System.out.println("STUDENT NOT IN GROUP: " + discipline);
+
     }
 
 
     Discipline getDiscipline() {
         return discipline;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Disc: " + this.getDiscipline();
     }
 
 }
