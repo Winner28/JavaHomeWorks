@@ -6,35 +6,48 @@ import lombok.NoArgsConstructor;
 
 
 @NoArgsConstructor
-public class Stuff {
+public class Stuff<T extends Stuff<T>> {
+
+
 
     private String stuffName;
 
     private int price;
 
-   /* public Stuff setPrice(int price) {
-        this.price = price;
-        return this;
-    }*/
 
-    public <T extends Stuff> T setPrice(int price) {
+
+
+    public T setPrice(int price) {
         this.price = price;
         return (T) this;
     }
 
 
-    public <T extends Stuff> T setName(String stuffName) {
+
+
+    public T setName(String stuffName) {
         this.stuffName = stuffName;
         return (T) this;
     }
+
+
 
 
     public int getPrice() {
         return price;
     }
 
+
+
     public String getStuffName() {
         return stuffName;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Name: " + getStuffName() + " Price: " + getPrice();
     }
 
 

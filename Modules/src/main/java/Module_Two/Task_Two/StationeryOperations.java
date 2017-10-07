@@ -8,8 +8,10 @@ public interface StationeryOperations {
     void addNotebookWithFixedPriceAndName(int price, String name);
     void addPen(int price, String name, Color color);
     void addNote(int price, String name, int lists);
+    void addOtherStuff(int price, String name);
     void showPenList();
     void showNotebookList();
+    void showOtherStuffList();
     int getFullPrice();
 
 }

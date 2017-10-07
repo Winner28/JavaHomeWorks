@@ -8,7 +8,7 @@ public enum Color {
 
     @Override
     public String toString() {
-        return " Color is :" + name();
+        return "Color is :" + name();
     }
 
 

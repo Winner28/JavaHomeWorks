@@ -2,10 +2,16 @@ package Module_Two.Task_Two.Stuff_List;
 
 import Module_Two.Task_One.Color;
 
-public class Pen extends Stuff {
+public class Pen extends Stuff<Pen> {
 
-    Color color;
+    private Color color;
 
+
+    /**
+     *
+     * @param color
+     * @return Pen.this
+     */
 
     public Pen setColor(Color color) {
         this.color = color;
@@ -17,6 +23,5 @@ public class Pen extends Stuff {
     public String toString() {
         return "Thi is Pen. \n" + "Name: " + getStuffName() + " \nPrice: " + getPrice() + "\n" + color;
     }
-
 
 }

@@ -1,6 +1,6 @@
 package Module_Two.Task_Two.Stuff_List;
 
-public class Notebooks extends Stuff {
+public class Notebooks extends Stuff<Notebooks> {
 
     private int list_count;
 
@@ -16,7 +16,7 @@ public class Notebooks extends Stuff {
 
     @Override
     public String toString() {
-        return "Thi is Notebook. \n" + "Name: " + getStuffName() + " \nPrice: " + getPrice() + "\n" + " Lists: " + getList_count();
+        return "Thi is Notebook. \n" + "Name: " + getStuffName() + " \nPrice: " + getPrice() + "\n" + "+Lists: " + getList_count();
     }
 
 }
