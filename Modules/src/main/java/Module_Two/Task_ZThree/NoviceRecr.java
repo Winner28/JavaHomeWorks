@@ -8,11 +8,12 @@ import Module_Two.Task_Two.Stuff_List.Pen;
 import Module_Two.Task_Two.Stuff_List.Stuff;
 import lombok.Getter;
 
-import java.util.List;
+
+import java.util.Objects;
 
 
 @Getter
-public class NoviceRecr extends Stationery implements NoviceOperations, Comparable {
+public class NoviceRecr extends Stationery implements NoviceOperations {
 
     private final String DEFAULT_NAME = "DEFAULT_NAME";
     private final int DEFAULT_PRICE = 30;
@@ -23,7 +24,7 @@ public class NoviceRecr extends Stationery implements NoviceOperations, Comparab
 
     private int age;
 
-    OtherStuff<Stuff> novice_stuff;
+    private OtherStuff<Stuff> novice_stuff;
 
     public NoviceRecr() {
         novice_stuff = new OtherStuff<>();
@@ -73,11 +74,60 @@ public class NoviceRecr extends Stationery implements NoviceOperations, Comparab
             System.out.println(novice_stuff.get(i));
             System.out.println("-------------------");
         }
+    }
 
+    private int getStuffPrice() {
+
+        int result = 0;
+
+        for (int i =0; i<novice_stuff.getSize(); i++) {
+            result+=novice_stuff.get(i).getPrice();
+        }
+
+        return result;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Recrut: \n" + first_name + " " + last_name;
+    }
+
+
+    @Override
+    public int hashCode() {
+        int result = 31;
+        result = 31*result + first_name.hashCode();
+        result = 31*result + last_name.hashCode();
+        result = 31*result + this.getStuffPrice()*10;
+
+        return result;
     }
 
     @Override
-    public int compareTo(Object o) {
-        return this.compareTo(o);
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (this.getClass() != object.getClass()) {
+            return false;
+        }
+
+        NoviceRecr noviceRecr = (NoviceRecr)object;
+
+        if (Objects.equals(this.last_name, noviceRecr.last_name) && Objects.equals(this.first_name,noviceRecr.first_name)) {
+            if (this.novice_stuff.getSize() == noviceRecr.novice_stuff.getSize() && this.getStuffPrice() == noviceRecr.getStuffPrice()) {
+                for (int i = 0; i<novice_stuff.getSize(); i++) {
+                    if (!(this.novice_stuff.get(i).getPrice() == noviceRecr.novice_stuff.get(i).getPrice() &&
+                            this.novice_stuff.get(i).getStuffName().equals(noviceRecr.novice_stuff.get(i).getStuffName()))) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
     }
+
 }

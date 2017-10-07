@@ -1,13 +1,10 @@
 package Module_Two.Task_Two.Stuff_List;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 
 @SuppressWarnings({"unchecked"})
-public class OtherStuff <T extends Object> {
+public class OtherStuff <T extends Stuff> {
 
     private T[] otherStuffs;
 
@@ -18,7 +15,6 @@ public class OtherStuff <T extends Object> {
     int standard_size = 10;
 
     public OtherStuff(int size) {
-
 
         otherStuffs = (T[]) new Object[size];
         capacity = size;
@@ -45,11 +41,9 @@ public class OtherStuff <T extends Object> {
 
     public void add(T[] newStuffs) {
 
-        int len = newStuffs.length;
+        if ((getCapacity() - getSize()) - newStuffs.length < 0) {
 
-        if (getCapacity() - len < 0) {
-
-            ensure_capacity(len - getCapacity() + 1);
+            ensure_capacity((newStuffs.length - getCapacity() - getSize()) + 1);
         }
 
         for (T newStuff : newStuffs) {
@@ -105,8 +99,8 @@ public class OtherStuff <T extends Object> {
     }
 
 
-    public <T> T[] getOtherStuffs() {
-        return (T[]) otherStuffs;
+    public <T extends Stuff> T[] getOtherStuffs() {
+        return (T[]) this.otherStuffs;
     }
 
     public void add(OtherStuff<T> otherStuff) {

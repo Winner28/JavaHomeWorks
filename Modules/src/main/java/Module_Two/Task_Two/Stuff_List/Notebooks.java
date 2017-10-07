@@ -16,7 +16,7 @@ public class Notebooks extends Stuff<Notebooks> {
 
     @Override
     public String toString() {
-        return "Thi is Notebook. \n" + "Name: " + getStuffName() + " \nPrice: " + getPrice() + "\n" + "+Lists: " + getList_count();
+        return "This is Notebook. \n" + "Name: " + getStuffName() + " \nPrice: " + getPrice() + "\n" + "+Lists: " + getList_count();
     }
 
 }

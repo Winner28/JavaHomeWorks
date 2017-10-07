@@ -21,7 +21,7 @@ public class Pen extends Stuff<Pen> {
 
     @Override
     public String toString() {
-        return "Thi is Pen. \n" + "Name: " + getStuffName() + " \nPrice: " + getPrice() + "\n" + color;
+        return "This is Pen. \n" + "Name: " + getStuffName() + " \nPrice: " + getPrice() + "\n" + color;
     }
 
 }

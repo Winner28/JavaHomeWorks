@@ -82,8 +82,7 @@ public class Stationery implements StationeryOperations {
     public void addPen(int price, String name, Color color) {
 
         if (pen_next >= pens.length) {
-            // pens[pen_next++] = new Pen().setPrice(price).setColor(color).setName(name);
-            System.out.println("Размер ручек ограничен!");
+            throwExc("Размер ручек ограничен!");
             return;
         }
 
@@ -95,8 +94,7 @@ public class Stationery implements StationeryOperations {
     public void addNote(int price, String name, int lists) {
 
         if (notebook_next >= notebooks.length) {
-            // notebooks[notebook_next++] = new Notebooks().setList_count(lists).setName(name).setPrice(price);
-            System.out.println("Размер тетрадей ограничен!");
+            throwExc("Размер тетрадей ограничен!");
             return;
         }
 
@@ -128,6 +126,7 @@ public class Stationery implements StationeryOperations {
 
     }
 
+
     @Override
     public int getFullPrice() {
         int result = 0;
@@ -145,6 +144,8 @@ public class Stationery implements StationeryOperations {
 
         return result;
     }
+
+
 
 
 
@@ -168,5 +169,9 @@ public class Stationery implements StationeryOperations {
         }
     }
 
+
+    private void throwExc(String message) {
+        throw new RuntimeException(message);
+    }
 
 }
