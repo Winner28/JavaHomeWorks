@@ -3,6 +3,12 @@ package Module_Two.Task_ZSix_Seven;
 import lombok.Getter;
 
 @Getter
+
+@About(
+        info =  "Atomic Boat class",
+        author = "vlaDey",
+        date = "8 of october 2017")
+
 public class AtomicBoat {
 
     private String boat_name;

@@ -4,6 +4,7 @@ import Module_Two.Task_WThree.NoviceRecr;
 import Module_Two.Task_WWFive.Discipline;
 import Module_Two.Task_WWFive.Mark;
 import Module_Two.Task_WWFive.University;
+import Module_Two.Task_ZSix_Seven.About;
 import Module_Two.Task_ZSix_Seven.AtomicBoat;
 import Module_Two.Task_ZSix_Seven.Destination;
 
