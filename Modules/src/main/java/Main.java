@@ -4,12 +4,14 @@ import Module_Two.Task_WThree.NoviceRecr;
 import Module_Two.Task_WWFive.Discipline;
 import Module_Two.Task_WWFive.Mark;
 import Module_Two.Task_WWFive.University;
+import Module_Two.Task_ZSix_Seven.AtomicBoat;
+import Module_Two.Task_ZSix_Seven.Destination;
 
 public class Main {
 
     public static void main(String[] args) throws Throwable {
 
-        Stationery stationery = new Stationery();
+       /* Stationery stationery = new Stationery();
 
         stationery.addPen(30, "Gelly", Color.RED);
         stationery.addPen(30, "Gelly", Color.YELLOW);
@@ -41,11 +43,19 @@ public class Main {
         university.setStudentMark(Discipline.History, "V", "B", 19, new Mark<>().setMark(3.44));
 
         university.compareScores("V", "B", 19);
+*/
 
+        AtomicBoat atomicBoat = new AtomicBoat();
+        atomicBoat.swimTo(new Destination().setxDest(5).setyDest(3));
 
+        AtomicBoat.Engine engine = atomicBoat.new Engine();
+        engine.startEngine();
 
+        atomicBoat.swimTo(new Destination().setxDest(5).setyDest(3));
 
+        engine.stopEngine();
 
+        atomicBoat.swimTo(new Destination().setyDest(5).setxDest(30));
 
 
 

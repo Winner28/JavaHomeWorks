@@ -1,8 +1,9 @@
 package Module_Two.Task_WWFive;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.List;
+
+
 
 @SuppressWarnings({"unchecked"})
 public class MyList <T> {
@@ -31,6 +32,8 @@ public class MyList <T> {
        this.elementData[size++] = object;
     }
 
+
+
     private void checkIndex(int index) {
         if (index >= this.size) {
             throw new IndexOutOfBoundsException();
@@ -42,7 +45,6 @@ public class MyList <T> {
             this.elementData = Arrays.copyOf(this.elementData, (this.elementData.length*3)/2 + 1);
         }
     }
-
 
     public int getSize() {
         return size;

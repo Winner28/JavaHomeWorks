@@ -24,6 +24,8 @@ public class NoviceRecr extends Stationery implements NoviceOperations {
 
     private int age;
 
+    private int result_price;
+
     private OtherStuff<Stuff> novice_stuff;
 
     public NoviceRecr() {
@@ -52,16 +54,19 @@ public class NoviceRecr extends Stationery implements NoviceOperations {
     @Override
     public void needPen(Color color) {
         novice_stuff.add(new Pen().setName(DEFAULT_NAME).setPrice(DEFAULT_PRICE).setColor(color));
+        result_price += DEFAULT_PRICE;
     }
 
     @Override
     public void needNotebook(int lists) {
         novice_stuff.add(new Notebooks().setName(DEFAULT_NAME).setPrice(DEFAULT_PRICE).setList_count(lists));
+        result_price += DEFAULT_PRICE;
     }
 
     @Override
     public void needOtherStuff(String name, int price) {
         novice_stuff.add(new Stuff().setName(name).setPrice(price));
+        result_price += price;
     }
 
     @Override
@@ -76,16 +81,7 @@ public class NoviceRecr extends Stationery implements NoviceOperations {
         }
     }
 
-    private int getStuffPrice() {
 
-        int result = 0;
-
-        for (int i =0; i<novice_stuff.getSize(); i++) {
-            result+=novice_stuff.get(i).getPrice();
-        }
-
-        return result;
-    }
 
 
 
@@ -98,9 +94,10 @@ public class NoviceRecr extends Stationery implements NoviceOperations {
     @Override
     public int hashCode() {
         int result = 31;
+
         result = 31*result + first_name.hashCode();
         result = 31*result + last_name.hashCode();
-        result = 31*result + this.getStuffPrice()*10;
+        result = 31*result + result_price;
 
         return result;
     }
@@ -117,7 +114,7 @@ public class NoviceRecr extends Stationery implements NoviceOperations {
         NoviceRecr noviceRecr = (NoviceRecr)object;
 
         if (Objects.equals(this.last_name, noviceRecr.last_name) && Objects.equals(this.first_name,noviceRecr.first_name)) {
-            if (this.novice_stuff.getSize() == noviceRecr.novice_stuff.getSize() && this.getStuffPrice() == noviceRecr.getStuffPrice()) {
+            if (this.novice_stuff.getSize() == noviceRecr.novice_stuff.getSize() && this.result_price == noviceRecr.result_price) {
                 for (int i = 0; i<novice_stuff.getSize(); i++) {
                     if (!(this.novice_stuff.get(i).getPrice() == noviceRecr.novice_stuff.get(i).getPrice() &&
                             this.novice_stuff.get(i).getStuffName().equals(noviceRecr.novice_stuff.get(i).getStuffName()))) {
