@@ -37,6 +37,28 @@ public class SGroup {
 
     }
 
+    public void studentScore(String first, String last, int age) {
+        for (int i = 0; i < studentList.getSize(); i++) {
+            if (studentList.get(i).equals(new Student().setFirst(first).setLast(last).setAge(age))) {
+                System.out.println("STUDENT IN GROUP of " + discipline + " \nHis MARK is: " + studentList.get(i).getI_mark());
+                System.out.println("***");
+                return;
+            }
+        }
+
+    }
+
+
+    public void setStudentMark(String first, String last, int age, Mark<?> mark) {
+        for (int i = 0; i < studentList.getSize(); i++) {
+            if (studentList.get(i).equals(new Student().setFirst(first).setLast(last).setAge(age))) {
+                studentList.get(i).setI_mark(mark);
+                return;
+            }
+        }
+        System.out.println("Student not in group!");
+    }
+
 
     Discipline getDiscipline() {
         return discipline;

@@ -2,6 +2,7 @@ import Module_Two.Task_One.Color;
 import Module_Two.Task_Two.Stationery;
 import Module_Two.Task_WThree.NoviceRecr;
 import Module_Two.Task_WWFive.Discipline;
+import Module_Two.Task_WWFive.Mark;
 import Module_Two.Task_WWFive.University;
 
 public class Main {
@@ -31,6 +32,18 @@ public class Main {
 
 
         University university = new University().setUniversityName("LETI");
+
+
+        university.addStudentInGroup(Discipline.Math, "V", "B", 19);
+        university.setStudentMark(Discipline.Math, "V", "B", 19,  new Mark<>().setMark(3));
+
+        university.addStudentInGroup(Discipline.History, "V", "B", 19);
+        university.setStudentMark(Discipline.History, "V", "B", 19, new Mark<>().setMark(3.44));
+
+        university.compareScores("V", "B", 19);
+
+
+
 
 
 

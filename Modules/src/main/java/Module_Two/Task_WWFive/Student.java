@@ -14,6 +14,17 @@ public class Student {
 
     private int age;
 
+    private Mark<?> i_mark;
+
+
+
+    public Student setI_mark(Mark<?> mark) {
+        this.i_mark = mark;
+        return this;
+    }
+
+
+
     public Student setAge(int age) {
         this.age = age;
         return this;
