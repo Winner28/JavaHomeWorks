@@ -5,7 +5,7 @@ import java.util.Date;
 public interface CrazyLoggerApi {
 
     String getLogByMessage(String message);
-    String getLogsByDay(int day);
+
     String getLogsByMonth(int month);
     String getLogsByYear(int year);
 
