@@ -18,9 +18,11 @@ Module_Two (Task_One_To_Five) - 07.09.2017
 Module_Two (Task_Six_&_Seven) - 08.09.2017
 
 ```
-
-
+### Module_Three
+```
+Module_Three (Task_One) - 14.10.2017
+```
 ## The latest add:
 ```
-Module_Two (Task_Seven)
+Module_Three (Task_One)
 ```
