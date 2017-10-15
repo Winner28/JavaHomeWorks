@@ -1,5 +1,6 @@
 package Module_vThree_Strings.Task_One;
 
+import javax.management.relation.RoleUnresolved;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -51,6 +52,7 @@ public class CrazyLogger implements CrazyLoggerApi {
 
     @Override
     public String getLogsByMonth(int month) {
+        if (month  > 12 || month < 1) throw new RuntimeException("Incorrect month");
         StringBuilder result = new StringBuilder();
         String[] msg = stringBuilder.toString().split("\n");
         for (String s : msg) {
@@ -106,7 +108,6 @@ public class CrazyLogger implements CrazyLoggerApi {
             return Integer.parseInt(String.valueOf(message.charAt(4))) == month;
         }
 
-        System.out.println(message.charAt(3));
         return Integer.valueOf(message.charAt(3) + String.valueOf(message.charAt(4))) == month;
     }
 
