@@ -24,9 +24,6 @@ public class Questionary implements QuestionaryAPI {
     }
 
 
-
-
-
     @Override
     public String getQuestionAnswer(String question) {
         return bundle.getString(question);
@@ -35,12 +32,20 @@ public class Questionary implements QuestionaryAPI {
 
 
     @Override
-    public String getQuestionList() {
+    public void getQuestionList() {
         Enumeration<String> enumeration = bundle.getKeys();
         while (enumeration.hasMoreElements()) {
             System.out.println("0" + enumeration.nextElement());
         }
-        return null;
+    }
+
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (this.getClass() != object.getClass()) return false;
+
+        return ((Questionary)object).langLocale == this.langLocale && ((Questionary)object).bundle == this.bundle;
     }
 
 }
