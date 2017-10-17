@@ -71,28 +71,23 @@ public class CharStream implements OperReader {
         }
     }
 
-/*
+
+
+    @Override
     public void readFileByte(String frFile) {
         stringList.clear();
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(frFile))))){
-            setFromFile(frFile);
-            String line;
-            while ((line = bufferedReader.readLine())!=null) {
-                for (String s: OperReader.keyWords) {
-                    if (line.contains(s)) {
-                        if (wordChecker(s)) {
-                            stringList.add(s);
-                            counter++;
-                        }
-                    }
-                }
-            }
+       try (InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(frFile))) {
+           //...
+           //...
+           //inputStreamReader.read();
+           //...
+           //...
         } catch (IOException e) {
             fromFile = "";
             stringList.clear();
             e.printStackTrace();
         }
-    }*/
+    }
 
 
     private void writeBytes(BufferedOutputStream bufferedOutputStream, byte []wTw) throws IOException {
