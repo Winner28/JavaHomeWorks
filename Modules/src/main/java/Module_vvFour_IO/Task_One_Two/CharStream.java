@@ -18,7 +18,7 @@ public class CharStream implements OperReader {
     @Override
     public void readFile(String frFile) {
        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(frFile))) {
-            this.fromFile = frFile;
+           setFromFile(frFile);
             String line;
             while ((line = bufferedReader.readLine())!=null) {
                 for (String s: OperReader.keyWords) {
@@ -32,6 +32,7 @@ public class CharStream implements OperReader {
             }
        } catch (IOException e) {
            fromFile = "";
+           stringList.clear();
            e.printStackTrace();
        }
 
@@ -53,9 +54,59 @@ public class CharStream implements OperReader {
     }
 
 
+
+    @Override
+    public void writetoFileByte(String tFile) {
+        try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(tFile))) {
+            String frFile = "Reading from file" + fromFile + "\n";
+            String totalW = "Total key words: " + counter + "\n";
+            writeBytes(bufferedOutputStream,frFile.getBytes());
+            writeBytes(bufferedOutputStream,totalW.getBytes());
+            for (String word : stringList) {
+                writeBytes(bufferedOutputStream, word.getBytes());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+/*
+    public void readFileByte(String frFile) {
+        stringList.clear();
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(frFile))))){
+            setFromFile(frFile);
+            String line;
+            while ((line = bufferedReader.readLine())!=null) {
+                for (String s: OperReader.keyWords) {
+                    if (line.contains(s)) {
+                        if (wordChecker(s)) {
+                            stringList.add(s);
+                            counter++;
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            fromFile = "";
+            stringList.clear();
+            e.printStackTrace();
+        }
+    }*/
+
+
+    private void writeBytes(BufferedOutputStream bufferedOutputStream, byte []wTw) throws IOException {
+        bufferedOutputStream.write(wTw);
+    }
+
+    private void setFromFile(String fromFile) {
+        this.fromFile = fromFile;
+    }
+
     private boolean wordChecker(String word) {
         return !stringList.contains(word);
     }
+
 
 
 }

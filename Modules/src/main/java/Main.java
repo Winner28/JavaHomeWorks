@@ -16,9 +16,6 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) throws Throwable {
-        CharStream charStream = new CharStream();
-        charStream.readFile("/home/vladey/Desktop/from.txt");
-        charStream.writetoFile("/home/vladey/Desktop/to.txt");
 
     }
 

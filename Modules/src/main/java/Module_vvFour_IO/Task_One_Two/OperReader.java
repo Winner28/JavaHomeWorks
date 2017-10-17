@@ -6,5 +6,6 @@ public interface OperReader {
 
     void readFile(String frFile);
     void writetoFile(String tFile);
+    void writetoFileByte(String tFile);
 
 }
