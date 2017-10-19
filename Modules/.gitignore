@@ -2,6 +2,6 @@ out/
 .idea/
 
 /Modules.iml
-/Study.iml
-
+Study.iml
+.gitignore
 /target
