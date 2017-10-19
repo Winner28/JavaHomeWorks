@@ -79,4 +79,34 @@ public class Hollywood implements PictureCreator, Serializable {
 
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for(Movie movie : hwMovies) {
+            stringBuilder.append(movie);
+        }
+
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (this.getClass() != object.getClass()) return false;
+
+        Hollywood hw = (Hollywood)object;
+
+        if (hw.hwMovies.size() == 0 && this.hwMovies.size()!=0) {
+            return false;
+        }
+        if (this.hwMovies.size() == hw.hwMovies.size()) {
+            for (int i = 0; i < hw.hwMovies.size(); i++) {
+                if (!(this.hwMovies.get(i).equals(hw.hwMovies.get(i)))) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 }

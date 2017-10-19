@@ -63,4 +63,15 @@ public class Actor implements Serializable {
     public String toString() {
         return firstName + " " + lastName;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (this.getClass() != o.getClass()) return false;
+
+        Actor actor = (Actor) o;
+
+        return this.firstName == null || this.firstName.equals(actor.firstName);
+
+    }
 }

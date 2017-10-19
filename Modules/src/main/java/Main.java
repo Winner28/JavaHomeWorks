@@ -3,10 +3,9 @@ import Module_4_IO.Task_wFour.Hollywood.Hollywood;
 import Module_4_IO.Task_wFour.Hollywood.PictureCreator;
 import Module_4_IO.Task_wFour.Serialize;
 
-public class Main {
+public interface Main {
 
-    public static void main(String[] args) throws Throwable {
+     static void main(String[] args) throws Throwable {
 
     }
-
 }
