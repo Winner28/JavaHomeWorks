@@ -8,7 +8,8 @@ public interface Main {
 
      static void main(String[] args) throws Throwable {
          FileSystem fileSystem = new FileSystem();
-         fileSystem.createFileInCatalogy();
+         fileSystem.start();
+         fileSystem.createFileInKnownCatalogy();
 
     }
 }

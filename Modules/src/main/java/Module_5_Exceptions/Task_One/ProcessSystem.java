@@ -6,7 +6,8 @@ public interface ProcessSystem {
 
 
     void deleteFileInCatalogy();
-    void createFileInCatalogy();
+    void createFileInKnownCatalogy();
+    void createFileInYourCatalogy();
     void writeInFile();
     void addToFile();
     void getInfo();

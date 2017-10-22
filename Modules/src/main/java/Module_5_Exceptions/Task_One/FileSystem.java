@@ -74,7 +74,39 @@ public class FileSystem implements ProcessSystem {
     }
 
     @Override
-    public void createFileInCatalogy() {
+    public void createFileInKnownCatalogy() {
+        System.out.println("In what directory you want to create File: ");
+        for (File file : fileSystem.keySet()) {
+            System.out.println(file.getName());
+        }
+        String dir = userInput("Choose a directory");
+        File dirFile = null;
+        for (File file : fileSystem.keySet()) {
+            if (file.getName().equals(dir)) {
+                dirFile = file;
+                break;
+            }
+        }
+        if (dirFile == null) {
+            throw new RuntimeException("Bad directory name!");
+        }
+
+        String fileName = userInput("Enter name of File");
+        try {
+
+            File newFile = new File(dirFile.getAbsolutePath() + "/" + fileName);
+            if (!(newFile.createNewFile())) {
+                throw new IOException("Smth is bad");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @Override
+    public void createFileInYourCatalogy() {
         getInfo();
         String dirQuest = "In what directory you want to create a file";
         String fileQuest = "Enter name of File";
@@ -82,7 +114,7 @@ public class FileSystem implements ProcessSystem {
         String fileName = userInput(fileQuest);
         File file = new File(directory + "\\" + fileName);
         if ((file.exists())) {
-            throw new RuntimeException("File already exists");
+            throw new RuntimeException("Exception!");
         }
 
         System.out.println("File created!");
@@ -131,4 +163,6 @@ public class FileSystem implements ProcessSystem {
 
         return input.trim();
     }
+
+
 }
