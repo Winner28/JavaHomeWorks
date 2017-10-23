@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.*;
 
 
-@SuppressWarnings("uncecked")
+@SuppressWarnings("unchecked")
 public class FileSystem implements ProcessSystem {
 
 
@@ -70,7 +70,7 @@ public class FileSystem implements ProcessSystem {
 
     @Override
     public void deleteFileInCatalogy() {
-
+        //TODO
     }
 
     @Override
@@ -108,13 +108,13 @@ public class FileSystem implements ProcessSystem {
     @Override
     public void createFileInYourCatalogy() {
         getInfo();
-        String dirQuest = "In what directory you want to create a file";
+        String dirQuest = "In what directory you want to create File";
         String fileQuest = "Enter name of File";
         String directory = userInput(dirQuest);
         String fileName = userInput(fileQuest);
         File file = new File(directory + "\\" + fileName);
         if ((file.exists())) {
-            throw new RuntimeException("Exception!");
+            throw new RuntimeException("File already exists!");
         }
 
         System.out.println("File created!");
@@ -122,12 +122,37 @@ public class FileSystem implements ProcessSystem {
 
     @Override
     public void writeInFile() {
+        String file = userInput("Path to file: ");
+        File fileCheck = new File(file);
+        if (!(fileCheck.exists() && !(fileCheck.isDirectory()))) {
+            throw new RuntimeException("File not exists");
+        }
 
+        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(file))) {
+                String operation = userInput("What you want to write in file?\n 1 - Another file \n 2 - Your msg\n");
+                switch (operation) {
+                    case "1":
+                        String choseFile = userInput("Enter a file path, please: ");
+
+                        //TODO
+
+                        break;
+                    case "2":
+                        String msg = userInput("Input a msg");
+                        fileWriter.write(msg);
+                        fileWriter.close();
+                        break;
+                    default:
+                        throw new RuntimeException("Bad input");
+                }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void addToFile() {
-
+        //TODO
     }
 
 
