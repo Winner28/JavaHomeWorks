@@ -9,7 +9,7 @@ public interface Main {
      static void main(String[] args) throws Throwable {
          FileSystem fileSystem = new FileSystem();
          fileSystem.start();
-         fileSystem.createFileInKnownCatalogy();
+         fileSystem.writeInFile();
 
     }
 }

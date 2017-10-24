@@ -133,8 +133,18 @@ public class FileSystem implements ProcessSystem {
                 switch (operation) {
                     case "1":
                         String choseFile = userInput("Enter a file path, please: ");
+                        File fileCheck2 = new File(choseFile);
+                        if (!(fileCheck.exists() && !(fileCheck.isDirectory()))) {
+                            throw new RuntimeException("File not exists");
+                        }
+                        StringBuilder fileread = new StringBuilder();
+                        BufferedReader bufferedReader = new BufferedReader(new FileReader(choseFile));
+                        String line;
+                        while ((line = bufferedReader.readLine())!=null) {
+                            fileread.append(line + "\n");
+                        }
 
-                        //TODO
+                        fileWriter.write(fileread.toString());
 
                         break;
                     case "2":
