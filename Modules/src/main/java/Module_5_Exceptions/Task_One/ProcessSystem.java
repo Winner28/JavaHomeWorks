@@ -5,10 +5,9 @@ import java.io.File;
 public interface ProcessSystem {
 
 
-    void deleteFileInCatalogy();
+    void deleteFileInCatalogy() ;
     void createFileInKnownCatalogy();
     void createFileInYourCatalogy();
     void writeInFile();
-    void addToFile();
     void getInfo();
 }

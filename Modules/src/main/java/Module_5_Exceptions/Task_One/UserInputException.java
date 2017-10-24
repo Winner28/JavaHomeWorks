@@ -1,6 +1,6 @@
 package Module_5_Exceptions.Task_One;
 
-public class UserInputException extends Exception {
+public class UserInputException extends RuntimeException {
     private String message;
 
     public UserInputException(String message) {

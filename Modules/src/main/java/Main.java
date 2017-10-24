@@ -7,9 +7,9 @@ import Module_5_Exceptions.Task_One.FileSystem;
 public interface Main {
 
      static void main(String[] args) throws Throwable {
+
          FileSystem fileSystem = new FileSystem();
-         fileSystem.start();
-         fileSystem.writeInFile();
+         fileSystem.deleteFileInCatalogy();
 
     }
 }

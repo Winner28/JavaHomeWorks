@@ -1,12 +1,18 @@
 package Module_5_Exceptions.Task_One;
 
+import Module_2_OOP.Task_ZSix_Seven.About;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 import java.io.*;
 import java.util.*;
 
 
-@SuppressWarnings("unchecked")
+@About(
+        info =  "FileSystem",
+        author = "vlaDey",
+        date = "24 of october 2017"
+)
+
 public class FileSystem implements ProcessSystem {
 
 
@@ -52,13 +58,13 @@ public class FileSystem implements ProcessSystem {
             e.printStackTrace();
         }
         if (directory.equals("")) {
-            throw new RuntimeException("Bad directory!");
+            throw new UserInputException("Bad directory!");
         }
 
         File file = new File(directory);
 
         if (!(file.exists())) {
-            throw new RuntimeException("Bad directory!");
+            throw new UserInputException("Bad directory!");
         }
 
         runIntoFileSystem(file);
@@ -69,8 +75,22 @@ public class FileSystem implements ProcessSystem {
 
 
     @Override
-    public void deleteFileInCatalogy() {
-        //TODO
+    public void deleteFileInCatalogy()  {
+
+        System.out.println("Deleting file");
+        String input = userInput("Path to file: ");
+
+        File file = new File(input);
+        if (!(file.exists())) {
+            throw new UserInputException("Bad directory");
+        }
+
+        if (file.delete()) {
+            System.out.println("Deleted");
+        } else {
+            throw new RuntimeException("Smth wrong!");
+        }
+
     }
 
     @Override
@@ -88,7 +108,7 @@ public class FileSystem implements ProcessSystem {
             }
         }
         if (dirFile == null) {
-            throw new RuntimeException("Bad directory name!");
+            throw new UserInputException("Bad directory name!");
         }
 
         String fileName = userInput("Enter name of File");
@@ -114,7 +134,7 @@ public class FileSystem implements ProcessSystem {
         String fileName = userInput(fileQuest);
         File file = new File(directory + "\\" + fileName);
         if ((file.exists())) {
-            throw new RuntimeException("File already exists!");
+            throw new UserInputException("File already exists!");
         }
 
         System.out.println("File created!");
@@ -125,17 +145,17 @@ public class FileSystem implements ProcessSystem {
         String file = userInput("Path to file: ");
         File fileCheck = new File(file);
         if (!(fileCheck.exists() && !(fileCheck.isDirectory()))) {
-            throw new RuntimeException("File not exists");
+            throw new UserInputException("File not exists || It`s a directory!");
         }
 
-        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(file))) {
+        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(file, true))) {
                 String operation = userInput("What you want to write in file?\n 1 - Another file \n 2 - Your msg\n");
                 switch (operation) {
                     case "1":
                         String choseFile = userInput("Enter a file path, please: ");
                         File fileCheck2 = new File(choseFile);
-                        if (!(fileCheck.exists() && !(fileCheck.isDirectory()))) {
-                            throw new RuntimeException("File not exists");
+                        if (!(fileCheck2.exists() && !(fileCheck2.isDirectory()))) {
+                            throw new UserInputException("File not exists || It`s a directory!");
                         }
                         StringBuilder fileread = new StringBuilder();
                         BufferedReader bufferedReader = new BufferedReader(new FileReader(choseFile));
@@ -153,17 +173,14 @@ public class FileSystem implements ProcessSystem {
                         fileWriter.close();
                         break;
                     default:
-                        throw new RuntimeException("Bad input");
+                        throw new UserInputException("Bad input");
                 }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    @Override
-    public void addToFile() {
-        //TODO
-    }
+
 
 
     @Override
