@@ -11,11 +11,11 @@ Module_One (Full)             - 21.09.2017
 ```
 ### Module_Two
 ```
-Module_Two (Task_One)         - 04.09.2017
+Module_Two (Task_One)         - 04.10.2017
 
-Module_Two (Task_One_To_Five) - 07.09.2017
+Module_Two (Task_One_To_Five) - 07.10.2017
 
-Module_Two (Task_Six_&_Seven) - 08.09.2017
+Module_Two (Task_Six_&_Seven) - 08.10.2017
 
 ```
 ### Module_Three
@@ -32,7 +32,7 @@ Module_Four (Task_Four)       - 19.10.2017
 ### Module_Five
 ```
 Module_Five (Task_One)        - 24.10.2017
-Module_Fuve (Task_Two)        - 25.10.2017
+Module_Five (Task_Two)        - 25.10.2017
 
 
 ```
