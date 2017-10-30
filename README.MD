@@ -33,10 +33,12 @@ Module_Four (Task_Four)       - 19.10.2017
 ```
 Module_Five (Task_One)        - 24.10.2017
 Module_Five (Task_Two)        - 25.10.2017
-
-
+```
+### Module_Six
+```
+Module_Six (Task_One)         - 30.10.2017
 ```
 ## The latest add:
 ```
-Module_Five (Task_Two)
+Module_Six (Task_One)
 ```
