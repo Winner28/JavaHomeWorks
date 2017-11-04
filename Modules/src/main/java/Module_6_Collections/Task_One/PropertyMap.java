@@ -20,6 +20,7 @@ public class PropertyMap {
 
     private boolean propFileExists(String nameOfFile) {
         try {
+
             String realName = "./src/main/resources/" + nameOfFile.trim() + ".properties";
             FileInputStream fileInputStream = new FileInputStream(realName);
             properties.load(fileInputStream);

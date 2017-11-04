@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<bank>
+    <accounts>
+        <account id="account_first">
+            <first>Jacob</first>
+            <last>Smith</last>
+            <balance>1000</balance>
+        </account>
+
+
+        <account id="account_second">
+            <first>Nastya</first>
+            <last>Kaminsky</last>
+            <balance>1000</balance>
+        </account>
+
+        <account id="account_third">
+            <first>Ola</first>
+            <last>Bitukova</last>
+            <balance>1000</balance>
+        </account>
+
+    </accounts>
+
+
+    <transactions>
+        <transaction id="first">
+            <from>account_first</from>
+            <to>account_second</to>
+            <ammount>300</ammount>
+        </transaction>
+
+        <transaction id="second">
+            <from>account_first</from>
+            <to>account_third</to>
+            <ammount>200</ammount>
+        </transaction>
+
+
+        <transaction id="third">
+            <from>account_third</from>
+            <to>account_second</to>
+            <ammount>700</ammount>
+        </transaction>
+    </transactions>
+
+
+
+</bank>
