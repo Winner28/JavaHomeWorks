@@ -53,7 +53,7 @@ public class Account {
 
     public void withdraw(int ammount) {
         if (balance - ammount < 0) {
-            throw new RuntimeException("Bad ammount");
+            throw new RuntimeException("Bad ammount" + Thread.currentThread() + "  " + this.accountId);
         }
         int x = balance - ammount;
         //Some operations

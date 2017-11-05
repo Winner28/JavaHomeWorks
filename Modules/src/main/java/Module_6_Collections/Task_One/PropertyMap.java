@@ -1,5 +1,6 @@
 package Module_6_Collections.Task_One;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,6 +10,7 @@ public class PropertyMap {
 
     private HashMap<String, String> propertyMap;
     private Properties properties;
+    private File file;
 
 
     public PropertyMap() {

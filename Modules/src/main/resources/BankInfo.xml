@@ -20,6 +20,12 @@
             <balance>1000</balance>
         </account>
 
+        <account id="account_fourth">
+            <first>Ramio</first>
+            <last>Malio</last>
+            <balance>3000</balance>
+        </account>
+
     </accounts>
 
 
@@ -42,6 +48,23 @@
             <to>account_second</to>
             <ammount>700</ammount>
         </transaction>
+
+
+
+        <transaction id="4">
+            <from>account_third</from>
+            <to>account_fourth</to>
+            <ammount>200</ammount>
+        </transaction>
+
+
+        <transaction id="5">
+            <from>account_second</from>
+            <to>account_first</to>
+            <ammount>300</ammount>
+        </transaction>
+
+
     </transactions>
 
 
