@@ -9,6 +9,14 @@ import java.util.concurrent.TimeUnit;
 
 public interface Main {
     static void main(String[] args) throws InterruptedException {
+           Thread thread = new Thread(new PropertyRunn("file1"));
+           Thread thread1 = new Thread(new PropertyRunn("file2"));
+           thread.start();
+           thread1.start();
+
+
+
+
 
     }
 

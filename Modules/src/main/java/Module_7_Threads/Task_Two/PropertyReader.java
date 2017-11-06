@@ -4,7 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.Properties;
+import java.util.Set;
 
 public class PropertyReader {
 
@@ -21,7 +23,7 @@ public class PropertyReader {
 
     private boolean propFileExists(String nameOfFile) {
         try {
-            String realName = "./src/main/resources/" + nameOfFile.trim();
+            String realName = "./src/main/resources/" + nameOfFile.trim() + ".properties";
             fileInputStream = new FileInputStream(realName);
             properties.load(fileInputStream);
 
@@ -38,10 +40,13 @@ public class PropertyReader {
 
     public void read(String nameOfFile) {
         propFileExists(nameOfFile);
-        Enumeration enumeration = properties.propertyNames();
-        Enumeration enumeration1 = properties.keys();
-        while(enumeration.hasMoreElements()) {
-            System.out.println(Thread.currentThread() + "   Key: " + enumeration1 + " Value: " + enumeration);
+
+        Set set = properties.keySet();
+        Iterator iterator = set.iterator();
+
+        while(iterator.hasNext()) {
+            String key = String.valueOf(iterator.next());
+            System.out.println(Thread.currentThread() + " Key: " + key + " Value: " + properties.getProperty(key));
         }
 
     }
