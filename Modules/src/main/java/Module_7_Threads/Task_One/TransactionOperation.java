@@ -25,10 +25,19 @@ public class TransactionOperation {
     }
 
     public void handleTransaction(Transaction transaction) {
-        synchronized (transaction.getAccount_from()) {
+        if (transaction.getAccount_from().hashCode() > transaction.getAccount_to().hashCode()) {
+            synchronized (transaction.getAccount_from()) {
+                synchronized (transaction.getAccount_to()) {
+                    transaction.getAccount_from().withdraw(transaction.getAmmount());
+                    transaction.getAccount_to().deposit(transaction.getAmmount());
+                }
+            }
+        } else {
             synchronized (transaction.getAccount_to()) {
-                transaction.getAccount_from().withdraw(transaction.getAmmount());
-                transaction.getAccount_to().deposit(transaction.getAmmount());
+                synchronized (transaction.getAccount_from()) {
+                    transaction.getAccount_from().withdraw(transaction.getAmmount());
+                    transaction.getAccount_to().deposit(transaction.getAmmount());
+                }
             }
         }
     }

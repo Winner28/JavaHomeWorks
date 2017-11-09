@@ -1,5 +1,7 @@
 package Module_7_Threads.Task_vThree;
 
+import java.util.Collection;
+import java.util.Map;
 import java.util.Random;
 
 public class IntegerSetterGetter extends Thread {
