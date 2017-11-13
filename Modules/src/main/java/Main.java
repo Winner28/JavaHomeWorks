@@ -9,11 +9,7 @@ import java.util.stream.Collectors;
 
 public interface Main {
     static void main(String[] args) throws InterruptedException, IOException, ClassNotFoundException, SQLException {
-        JdbcHelloWorld helloWorld = new JdbcHelloWorld();
-        helloWorld.insert("asdad",123.3);
 
-        helloWorld.updateRow(6, "YBIVATOR", 13.13);
-        helloWorld.showDB();
 
     }
 
