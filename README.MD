@@ -43,7 +43,12 @@ Module_Six (Task_One)         - 30.10.2017
 Module_Seven (Task_One)       - 04.11.2017
 Module_Seven (Task_Two)       - 05.11.2017
 ```
+### Module_Eight
+```
+Module_Seven (Task_One)       - 13.11.2017
+Module_Seven (Task_Two)       - ?
+```
 ## The latest add:
 ```
-Module_Seven (Task_Two)
+Module_Eight (Task_oNe)
 ```
