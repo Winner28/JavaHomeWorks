@@ -38,9 +38,9 @@ public class Serialize {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(filename))) {
             Hollywood fileHollywood = (Hollywood)objectInputStream.readObject();
             setHollywood(fileHollywood);
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
