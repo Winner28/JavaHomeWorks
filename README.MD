@@ -45,10 +45,10 @@ Module_Seven (Task_Two)       - 05.11.2017
 ```
 ### Module_Eight
 ```
-Module_Seven (Task_One)       - 13.11.2017
-Module_Seven (Task_Two)       - ?
+Module_Eight (Task_One)       - 13.11.2017
+Module_Eight (Task_Two)       - 14.11.2017
 ```
 ## The latest add:
 ```
-Module_Eight (Task_oNe)
+Module_Eight (Task_Two)
 ```

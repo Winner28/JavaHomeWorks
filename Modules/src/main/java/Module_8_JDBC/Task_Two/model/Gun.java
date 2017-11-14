@@ -56,7 +56,7 @@ public class Gun {
 
     @Override
     public String toString() {
-        return String.format("---\n%s\n%d\n%f\n---\n", this.id,
+        return String.format("---\n%d\n%s\n%f\n---\n\n", this.id,
                 this.name, this.caliber);
     }
 }

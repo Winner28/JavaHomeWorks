@@ -19,7 +19,7 @@ public class ConnectionPool implements Closeable {
     public ConnectionPool() {
 
         Properties properties = new Properties() {
-            public Properties load(String path) {
+             Properties load(String path) {
                 try (InputStream inputStream = getClass().getResourceAsStream(path)) {
                     load(inputStream);
                 } catch (IOException e) {
