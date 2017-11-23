@@ -1,7 +1,5 @@
 out/
 .idea/
-
-/Modules.iml
+target
+Modules.iml
 Study.iml
-.gitignore
-/target
