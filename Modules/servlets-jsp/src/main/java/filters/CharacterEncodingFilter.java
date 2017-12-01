@@ -1,4 +1,4 @@
-package controllers;
+package filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -7,20 +7,18 @@ import java.io.IOException;
 
 
 @WebFilter(
-        urlPatterns = "/hello",
-        initParams = @WebInitParam(name = "characterEncoding", value = "utf-8"),
+        urlPatterns = "/*",
+        initParams = @WebInitParam(name = "characterEncoding", value = "UTF-8"),
         description = "Setting utf-8 for response && request"
 )
-public class FIlterr implements Filter {
+public class CharacterEncodingFilter implements Filter {
 
-    private ServletContext servletContext;
     private String encoding;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        servletContext = filterConfig.getServletContext();
         encoding = filterConfig.getInitParameter("characterEncoding");
-        servletContext.log("init successfully done");
+        System.out.println("init successfully done");
 
     }
 
@@ -28,13 +26,13 @@ public class FIlterr implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         servletRequest.setCharacterEncoding(encoding);
         servletResponse.setCharacterEncoding(encoding);
-        servletContext.log("Charset was set");
+
+        System.out.println("Charset was set");
         filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override
     public void destroy() {
-
     }
 
 
